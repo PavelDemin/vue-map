@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+   <div id="app" class="nul">
+    <div>{{msg}}</div>
+    <HelloWorld title='Заголовок блеать!' v-bind:date=datet></HelloWorld>
+   </div>
 </template>
 
 <script>
@@ -12,6 +12,17 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  methods:{
+    datet: function() {
+      let d = new Date()
+      return d.getDate()
+    }
+  },
+  data() {
+    return {
+      msg: 'Добро пожаловать!'
+    }
   }
 }
 </script>
